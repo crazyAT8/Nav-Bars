@@ -1,0 +1,80 @@
+:root {
+    font-size: 16px;
+    font-family: "Open Sans";
+    --text-primary: #b6b6b6;        /*these are css variables. they start with the double hyphen*/
+    --text-secondary: #ececec;      
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+}
+
+body {
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {               /*how to adhust the scrollbar*/
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #6649b8;
+}
+
+main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+.navbar {
+    width: 5rem;        /*notice that it matches the margin0left in the main tag*/
+    height: 100vh;
+    position: fixed;
+    background-color: var(--bg-primary);  /*this is how out color variables in the pseudo root element is called upon to be used*/
+    transition: width 200ms ease;         /*this is the animation for the navbar to expand with grace*/
+}
+
+.navbar-nav {
+    list-style: none;       /*the ul in the html will be our flex container*/
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--text-secondary);
+}
+
+.link-text {                /*for all the span tags not to show unless the user hovers over*/
+    display: none;
+    margin-left: 1rem;
+}
+
+.nav-link i {               /*for all the icon logo tags*/
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.navbar:hover {             /*the animation to expand the navbar when hovered over*/
+    width: 16rem;
+}
+
+.navbar:hover .link-text {  /*shows the text of the icons when the navbar is hovered over*/
+    display: block;
+}
+
